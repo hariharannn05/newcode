@@ -59,9 +59,10 @@ def generate_response(query, context):
     prompt = PROMPT_TEMPLATE.format(context=context, query=query)
 
     headers = {
-        "Authorization": OPENROUTER_API_KEY,
-        "Content-Type": "application/json"
-    }
+    "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+    "Content-Type": "application/json"
+}
+
 
     body = {
         "model": "mistralai/mistral-7b-instruct",
